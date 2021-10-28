@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.31019.35
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityFrameWorkIntro", "EntityFrameWorkIntro\EntityFrameWorkIntro.csproj", "{4AEDFB71-F057-436C-8F34-868CC6A297CF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsolaEntityFrameWork", "ConsolaEntityFrameWork\ConsolaEntityFrameWork.csproj", "{9A55092E-6528-4809-8A4E-838AFF46CC0E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsolaNetCoreEntityFrameWork", "ConsolaNetCoreEntityFrameWork\ConsolaNetCoreEntityFrameWork.csproj", "{0688707B-0012-41F3-9267-8CC4C11BB017}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{4AEDFB71-F057-436C-8F34-868CC6A297CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4AEDFB71-F057-436C-8F34-868CC6A297CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4AEDFB71-F057-436C-8F34-868CC6A297CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A55092E-6528-4809-8A4E-838AFF46CC0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A55092E-6528-4809-8A4E-838AFF46CC0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A55092E-6528-4809-8A4E-838AFF46CC0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A55092E-6528-4809-8A4E-838AFF46CC0E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0688707B-0012-41F3-9267-8CC4C11BB017}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0688707B-0012-41F3-9267-8CC4C11BB017}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0688707B-0012-41F3-9267-8CC4C11BB017}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0688707B-0012-41F3-9267-8CC4C11BB017}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

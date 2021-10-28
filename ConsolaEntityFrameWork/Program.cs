@@ -14,7 +14,7 @@ namespace ConsolaEntityFrameWork
 			{
 				foreach (alumnos alumno in db.alumnos)
 				{
-					Console.WriteLine(alumno.Nombre);
+					Console.WriteLine($"{alumno.Nombre} - {alumno.Apellidos}");
 				}
 			}
 

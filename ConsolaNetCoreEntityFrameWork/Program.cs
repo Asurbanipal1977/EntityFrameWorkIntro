@@ -10,7 +10,7 @@ namespace ConsolaNetCoreEntityFrameWork
 			using (EFContext context = new EFContext())
 			{
 				foreach (Alumno alumno in context.Alumnos)					
-					Console.WriteLine($"El alumno {alumno.Nombre}");
+					Console.WriteLine($"El alumno {alumno.Nombre} {alumno.Apellidos}");
 			}
 			Console.ReadLine();
 		}

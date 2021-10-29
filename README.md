@@ -65,8 +65,7 @@ Para usar el patrón de inyección de dependencia:
     </ItemGroup>
     
  - Usar este código:
-    `//Configuración para leer el fichero json.
-    var builder = new ConfigurationBuilder()
+    `    var builder = new ConfigurationBuilder()
 			  .SetBasePath(Directory.GetCurrentDirectory())
 			  .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
 			IConfiguration configuration = builder.Build();

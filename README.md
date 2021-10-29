@@ -58,11 +58,13 @@ Para usar el patrón de inyección de dependencia:
 - Instalar desde Nuget: Microsoft.Extensions.Configuration y Microsoft.Extensions.Configuration.Json
 - Editar el archivo del proyecto para que al compilar el proyecto especificar que el archivo json debe copiarse al al directorio de salida.
 
+```XML
     <ItemGroup>
         <None Update="appsettings.json">
           <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>
     </ItemGroup>
+```
     
  - Usar este código:
  ```C#

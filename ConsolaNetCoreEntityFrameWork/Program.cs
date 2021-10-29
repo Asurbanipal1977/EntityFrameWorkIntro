@@ -1,5 +1,7 @@
 ﻿using ConsolaNetCoreEntityFrameWork.Models;
+using Microsoft.Extensions.Configuration;
 using System;
+using System.IO;
 
 namespace ConsolaNetCoreEntityFrameWork
 {
@@ -7,7 +9,12 @@ namespace ConsolaNetCoreEntityFrameWork
 	{
 		static void Main(string[] args)
 		{
-			using (EFContext context = new EFContext())
+			var builder = new ConfigurationBuilder()
+			  .SetBasePath(Directory.GetCurrentDirectory())
+			  .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
+			IConfiguration configuration = builder.Build();
+
+			using (EFContext context = new EFContext(configuration))
 			{
 				foreach (Alumno alumno in context.Alumnos)					
 					Console.WriteLine($"El alumno {alumno.Nombre} {alumno.Apellidos}");

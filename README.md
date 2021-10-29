@@ -51,7 +51,33 @@ Usamos la técnica **Data Base First**
 scaffold-dbcontext "Server=gigabyte-sabre\sqlexpress;Database=pruebas;integrated security=True;" Microsoft.EntityFrameworkCore.SqlServer -outputdir Models -context EFContext
 - Ya se puede llamar al context generado desde el Program.cs
 
-
 Para sobreescribir los cambios si se han realizado en base de datos, hay que lanzar:
 scaffold-dbcontext "Server=gigabyte-sabre\sqlexpress;Database=pruebas;integrated security=True;" Microsoft.EntityFrameworkCore.SqlServer -outputdir Models -context EFContext -force
+
+Para usar el patrón de inyección de dependencia:
+- Instalar desde Nuget: Microsoft.Extensions.Configuration y Microsoft.Extensions.Configuration.Json
+- Editar el archivo del proyecto para que al compilar el proyecto especificar que el archivo json debe copiarse al al directorio de salida.
+
+    <ItemGroup>
+        <None Update="appsettings.json">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+    </ItemGroup>
+    
+ - Usar este código:
+    `//Configuración para leer el fichero json.
+    var builder = new ConfigurationBuilder()
+			  .SetBasePath(Directory.GetCurrentDirectory())
+			  .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
+			IConfiguration configuration = builder.Build();
+
+			//Service para la inyección
+			var services = new ServiceCollection()
+				.AddDbContext<EFContext>(options =>
+					options.UseSqlServer(configuration.GetConnectionString("EFIntroContext")))
+				.BuildServiceProvider();
+
+			//inyección de dependencia
+			using (EFContext context = services.GetService<EFContext>())`
+
 

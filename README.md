@@ -65,18 +65,16 @@ Para usar el patrón de inyección de dependencia:
     </ItemGroup>
     
  - Usar este código:
-    `    var builder = new ConfigurationBuilder()
+    			`var builder = new ConfigurationBuilder()
 			  .SetBasePath(Directory.GetCurrentDirectory())
 			  .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
 			IConfiguration configuration = builder.Build();
 
-			//Service para la inyección
 			var services = new ServiceCollection()
 				.AddDbContext<EFContext>(options =>
 					options.UseSqlServer(configuration.GetConnectionString("EFIntroContext")))
 				.BuildServiceProvider();
 
-			//inyección de dependencia
 			using (EFContext context = services.GetService<EFContext>())`
 
 

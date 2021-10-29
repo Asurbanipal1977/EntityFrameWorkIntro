@@ -51,3 +51,7 @@ Usamos la técnica **Data Base First**
 scaffold-dbcontext "Server=gigabyte-sabre\sqlexpress;Database=pruebas;integrated security=True;" Microsoft.EntityFrameworkCore.SqlServer -outputdir Models -context EFContext
 - Ya se puede llamar al context generado desde el Program.cs
 
+
+Para sobreescribir los cambios si se han realizado en base de datos, hay que lanzar:
+scaffold-dbcontext "Server=gigabyte-sabre\sqlexpress;Database=pruebas;integrated security=True;" Microsoft.EntityFrameworkCore.SqlServer -outputdir Models -context EFContext -force
+
